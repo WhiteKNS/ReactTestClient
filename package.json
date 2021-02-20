@@ -1,0 +1,56 @@
+{
+  "name": "ReactTrainingClient",
+  "version": "1.0.0",
+  "description": "Test Client",
+  "main": "index.jsx",
+  "repository": "https://github.com/WhiteKNS/ReactTestClient",
+  "author": "nkonkina",
+  "license": "MIT",
+  "private": null,
+  "scripts": {
+    "build": "del /S dist\\dist\\* && npx webpack",
+    "run_http": "http-server dist/dist/ -p 8200 --cors",
+    "serve": "./scripts/serve.bat",
+    "test:e": "npm run cucumberjs spec/cucumber/features -- --require-module @babel/register --require \"spec/cucumber/steps/*.js\" --require \"spec/cucumber/steps/navigations/*.js\"",
+    "test:e2e": "npm run cucumberjs spec/cucumber/features -- --require-module @babel/register --require spec/cucumber/steps/*.js",
+    "cucumberjs": "./node_modules/.bin/cucumber-js"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.16",
+    "@babel/plugin-proposal-class-properties": "^7.12.13",
+    "@babel/preset-env": "^7.12.17",
+    "@babel/preset-react": "^7.12.13",
+    "@cucumber/cucumber": "^7.0.0",
+    "babel-loader": "^8.2.2",
+    "babel-register": "^6.26.0",
+    "chromedriver": "^88.0.0",
+    "copy-webpack-plugin": "^7.0.0",
+    "crypto-browserify": "^3.12.0",
+    "dotenv-cli": "^4.0.0",
+    "geckodriver": "^1.22.1",
+    "http-server": "^0.12.3",
+    "selenium-webdriver": "^4.0.0-beta.1",
+    "string-replace-loader": "^3.0.1",
+    "webpack": "^5.22.0",
+    "webpack-cli": "^4.5.0"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.12.1",
+    "@babel/register": "^7.12.13",
+    "babel-preset-env": "^1.7.0",
+    "bcryptjs": "^2.4.3",
+    "buffer": "^6.0.3",
+    "cucumber": "^7.0.0-rc.0",
+    "dotenv": "^8.2.0",
+    "npx": "^10.2.2",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "stream-browserify": "^3.0.0"
+  },
+  "browser": {
+    "crypto": false
+  },
+  "plugins": [
+    "@babel/plugin-proposal-class-properties"
+  ]
+}
